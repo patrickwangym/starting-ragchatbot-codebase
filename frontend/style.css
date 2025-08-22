@@ -46,25 +46,50 @@ body {
     padding: 0;
 }
 
-/* Header - Hidden */
+/* Header - Enhanced */
 header {
-    display: none;
+    display: block;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 header h1 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
 }
 
 .subtitle {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
+    position: relative;
+    z-index: 1;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 /* Main Content Area with Sidebar */
@@ -728,11 +753,15 @@ details[open] .suggested-header::before {
     }
     
     header {
-        padding: 1rem;
+        padding: 1.5rem 1rem;
     }
     
     header h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
     }
     
     .chat-messages {
